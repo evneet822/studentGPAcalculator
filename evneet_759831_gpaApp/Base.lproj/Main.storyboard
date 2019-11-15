@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="-480"/>
+            <point key="canvasLocation" x="1350" y="-544"/>
         </scene>
         <!--Student's Names-->
         <scene sceneID="yB6-YT-PH4">
@@ -99,7 +99,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="dZf-dq-thz" kind="show" id="Nlj-89-QWL"/>
+                                    <segue destination="ccI-ev-Bto" kind="show" id="6SF-KS-SIq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -123,6 +123,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9u-07-irU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="313" y="82"/>
+        </scene>
+        <!--Semester Table View Controller-->
+        <scene sceneID="xMY-c6-5qm">
+            <objects>
+                <tableViewController id="ccI-ev-Bto" customClass="semesterTableViewController" customModule="evneet_759831_gpaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="q5C-bO-07i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="courseCell" id="tZJ-Oe-ln6">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tZJ-Oe-ln6" id="Dwb-ZT-yn1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="dZf-dq-thz" kind="show" id="MpY-cG-jQr"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ccI-ev-Bto" id="C5U-qS-HAn"/>
+                            <outlet property="delegate" destination="ccI-ev-Bto" id="gps-cf-2VR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="7bg-LX-8bb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CPz-En-YBJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1338" y="234"/>
         </scene>
         <!--Acalculater View Controller-->
         <scene sceneID="DNI-Eu-TDq">
@@ -171,7 +203,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MAD3115" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMB-ZX-Lc4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MAD 3115" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMB-ZX-Lc4">
                                 <rect key="frame" x="33" y="316" width="119" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -218,6 +250,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="mAX-Rz-kso"/>
                     <connections>
+                        <outlet property="lbl1" destination="eou-p3-Asw" id="x1x-jx-3zW"/>
+                        <outlet property="lbl2" destination="K1P-Oa-5rL" id="CjT-Or-oL4"/>
+                        <outlet property="lbl3" destination="xNV-of-RdF" id="yl1-nn-bJx"/>
+                        <outlet property="lbl4" destination="YMB-ZX-Lc4" id="0HB-Gm-7qT"/>
+                        <outlet property="lbl5" destination="eSi-yz-7Qx" id="sQ1-cE-zHH"/>
                         <outlet property="result" destination="ju9-NG-Zzk" id="ctl-Tn-WvM"/>
                         <outlet property="textfeild1" destination="DfN-bk-DjU" id="mUG-8t-bOa"/>
                         <outlet property="textfeild2" destination="FXJ-6U-hyA" id="6wc-oF-0w2"/>
@@ -228,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvn-Id-3oj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="203"/>
+            <point key="canvasLocation" x="2343" y="188"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="57E-jr-6ZN">

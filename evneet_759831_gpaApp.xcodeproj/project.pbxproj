@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9B3C952D237F27E200452B5B /* GPAcalculaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C952C237F27E200452B5B /* GPAcalculaterViewController.swift */; };
+		9B3C9531237F56A200452B5B /* courselist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C9530237F56A200452B5B /* courselist.swift */; };
+		9B3C9533237F57E000452B5B /* semesterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C9532237F57E000452B5B /* semesterTableViewController.swift */; };
 		9B641A05237DDC02000FFEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A04237DDC02000FFEE1 /* AppDelegate.swift */; };
 		9B641A07237DDC02000FFEE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A06237DDC02000FFEE1 /* SceneDelegate.swift */; };
 		9B641A09237DDC02000FFEE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A08237DDC02000FFEE1 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		9B3C952C237F27E200452B5B /* GPAcalculaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPAcalculaterViewController.swift; sourceTree = "<group>"; };
+		9B3C9530237F56A200452B5B /* courselist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courselist.swift; sourceTree = "<group>"; };
+		9B3C9532237F57E000452B5B /* semesterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = semesterTableViewController.swift; sourceTree = "<group>"; };
 		9B641A01237DDC02000FFEE1 /* evneet_759831_gpaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = evneet_759831_gpaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B641A04237DDC02000FFEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B641A06237DDC02000FFEE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				9B641A18237DE01D000FFEE1 /* studentStruct.swift */,
 				9B641A1A237DE0A5000FFEE1 /* StudentTableViewController.swift */,
 				9B3C952C237F27E200452B5B /* GPAcalculaterViewController.swift */,
+				9B3C9530237F56A200452B5B /* courselist.swift */,
+				9B3C9532237F57E000452B5B /* semesterTableViewController.swift */,
 			);
 			path = evneet_759831_gpaApp;
 			sourceTree = "<group>";
@@ -147,6 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3C9531237F56A200452B5B /* courselist.swift in Sources */,
+				9B3C9533237F57E000452B5B /* semesterTableViewController.swift in Sources */,
 				9B641A09237DDC02000FFEE1 /* ViewController.swift in Sources */,
 				9B3C952D237F27E200452B5B /* GPAcalculaterViewController.swift in Sources */,
 				9B641A05237DDC02000FFEE1 /* AppDelegate.swift in Sources */,

@@ -12,6 +12,13 @@ import AVFoundation
 class GPAcalculaterViewController: UIViewController {
     
     
+    
+    @IBOutlet var lbl1: UILabel!
+    @IBOutlet var lbl2: UILabel!
+    @IBOutlet var lbl3: UILabel!
+    @IBOutlet var lbl4: UILabel!
+    @IBOutlet var lbl5: UILabel!
+    
     @IBOutlet var textfeild1: UITextField!
     @IBOutlet var textfeild2: UITextField!
     @IBOutlet var textfeild3: UITextField!

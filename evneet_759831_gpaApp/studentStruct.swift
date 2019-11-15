@@ -13,4 +13,5 @@ struct Student {
     var sId: String
     
     static var studentData = [Student]()
+    
 }
