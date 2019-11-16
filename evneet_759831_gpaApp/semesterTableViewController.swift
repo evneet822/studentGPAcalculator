@@ -9,10 +9,13 @@
 import UIKit
 
 class semesterTableViewController: UITableViewController {
-
+    
+    var semesterIndx = -1
+    var studentdelegate: StudentTableViewController?
+    var stdSemIndx = -1
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        stdSemIndx = (studentdelegate?.studentIndx)!
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -38,14 +41,16 @@ class semesterTableViewController: UITableViewController {
         
         if  let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell"){
         cell.textLabel?.text = Courses.course[indexPath.row]
-
+         
         // Configure the cell...
 
             return cell}
         return UITableViewCell()
     }
-    
-
+    override func viewWillDisappear(_ animated: Bool) {
+        studentdelegate!.tableView.reloadData()
+    }
+   
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -81,14 +86,22 @@ class semesterTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let detail = segue.destination as? GPAcalculaterViewController{
+            detail.semesterDelegate = self
+            
+        }
+        if let cell = sender as? UITableViewCell{
+            semesterIndx = tableView.indexPath(for: cell)!.row
+            
+        }
     }
-    */
+    
 
 }

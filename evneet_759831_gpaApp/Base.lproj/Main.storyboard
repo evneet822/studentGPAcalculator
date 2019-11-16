@@ -250,17 +250,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="mAX-Rz-kso"/>
                     <connections>
-                        <outlet property="lbl1" destination="eou-p3-Asw" id="x1x-jx-3zW"/>
-                        <outlet property="lbl2" destination="K1P-Oa-5rL" id="CjT-Or-oL4"/>
-                        <outlet property="lbl3" destination="xNV-of-RdF" id="yl1-nn-bJx"/>
-                        <outlet property="lbl4" destination="YMB-ZX-Lc4" id="0HB-Gm-7qT"/>
-                        <outlet property="lbl5" destination="eSi-yz-7Qx" id="sQ1-cE-zHH"/>
                         <outlet property="result" destination="ju9-NG-Zzk" id="ctl-Tn-WvM"/>
-                        <outlet property="textfeild1" destination="DfN-bk-DjU" id="mUG-8t-bOa"/>
-                        <outlet property="textfeild2" destination="FXJ-6U-hyA" id="6wc-oF-0w2"/>
-                        <outlet property="textfeild3" destination="HLq-8Z-RJb" id="9VP-z7-U2g"/>
-                        <outlet property="textfeild4" destination="LHn-1R-uvl" id="p5y-uL-VjG"/>
-                        <outlet property="textfeild5" destination="cwP-Sp-5lH" id="bCf-ra-1Ll"/>
+                        <outletCollection property="courceLabel" destination="eou-p3-Asw" collectionClass="NSMutableArray" id="tfq-qX-OLW"/>
+                        <outletCollection property="courceLabel" destination="K1P-Oa-5rL" collectionClass="NSMutableArray" id="ZXk-pf-Stp"/>
+                        <outletCollection property="courceLabel" destination="xNV-of-RdF" collectionClass="NSMutableArray" id="NA9-Cx-OJP"/>
+                        <outletCollection property="courceLabel" destination="YMB-ZX-Lc4" collectionClass="NSMutableArray" id="CCx-uc-OIF"/>
+                        <outletCollection property="courceLabel" destination="eSi-yz-7Qx" collectionClass="NSMutableArray" id="Etn-NF-GHp"/>
+                        <outletCollection property="textfeild" destination="DfN-bk-DjU" collectionClass="NSMutableArray" id="OUl-Rc-agD"/>
+                        <outletCollection property="textfeild" destination="FXJ-6U-hyA" collectionClass="NSMutableArray" id="jcx-P8-SdW"/>
+                        <outletCollection property="textfeild" destination="HLq-8Z-RJb" collectionClass="NSMutableArray" id="q7t-ID-agk"/>
+                        <outletCollection property="textfeild" destination="LHn-1R-uvl" collectionClass="NSMutableArray" id="rQ3-aH-FhB"/>
+                        <outletCollection property="textfeild" destination="cwP-Sp-5lH" collectionClass="NSMutableArray" id="4vk-L3-wMM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvn-Id-3oj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

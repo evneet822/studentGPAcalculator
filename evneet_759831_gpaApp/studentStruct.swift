@@ -11,6 +11,12 @@ struct Student {
     var firstName: String
     var lastName: String
     var sId: String
+    var marks = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
+    var gpa = [0.0,0.0,0.0]
+    var cgpa: Double{
+        
+        return (gpa[0] + gpa[1] + gpa[2]) / 3
+    }
     
     static var studentData = [Student]()
     

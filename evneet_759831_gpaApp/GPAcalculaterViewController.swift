@@ -12,30 +12,29 @@ import AVFoundation
 class GPAcalculaterViewController: UIViewController {
     
     
-    
-    @IBOutlet var lbl1: UILabel!
-    @IBOutlet var lbl2: UILabel!
-    @IBOutlet var lbl3: UILabel!
-    @IBOutlet var lbl4: UILabel!
-    @IBOutlet var lbl5: UILabel!
-    
-    @IBOutlet var textfeild1: UITextField!
-    @IBOutlet var textfeild2: UITextField!
-    @IBOutlet var textfeild3: UITextField!
-    @IBOutlet var textfeild4: UITextField!
-    @IBOutlet var textfeild5: UITextField!
+    @IBOutlet var courceLabel: [UILabel]!
+    @IBOutlet var textfeild: [UITextField]!
     @IBOutlet var result: UILabel!
     
     var audioplayer: AVAudioPlayer!
-    let sound = ["Win"]
     var c1: Double?
-    
+    var marks: Double?
+    var gpa = 0.0
+   
+    var semesterDelegate: semesterTableViewController?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        for i in courceLabel.indices{
+            courceLabel[i].text = Courses.courseList[(semesterDelegate?.semesterIndx)!][i]
+
+        }
+        
         // Do any additional setup after loading the view.
+        
+        
     }
     
 
@@ -52,23 +51,32 @@ class GPAcalculaterViewController: UIViewController {
     
     @IBAction func calculate(_ sender: UIButton) {
         
-        let course1 = convertToGPA(marks: Int(textfeild1.text!)!)
-         let course2 = convertToGPA(marks: Int(textfeild2.text!)!)
-         let course3 = convertToGPA(marks: Int(textfeild3.text!)!)
-         let course4 = convertToGPA(marks: Int(textfeild4.text!)!)
-         let course5 = convertToGPA(marks: Int(textfeild5.text!)!)
-         
-         let gpa = ((course1 * 4) + (course2 * 3) + (course3 * 3) + (course4 * 5) +  (course5 * 5)) / 20.0
-         result.text = "GPA: \(gpa)/4"
+        for i in textfeild.indices{
+            
+            marks = convertToGPA(marks: Int(textfeild[i].text!)!)
+            Student.studentData[semesterDelegate!.stdSemIndx].marks[semesterDelegate!.semesterIndx][i] = Int(textfeild[i].text!)!
+            let credit = courceLabel[i].text!
+            gpa += (marks! * Double(String(credit[credit.index(before: credit.endIndex)]))!)
+            
+
+            
+            
+        }
+        let semesterGpa = gpa / 20.0
+        Student.studentData[semesterDelegate!.stdSemIndx].gpa[semesterDelegate!.semesterIndx] = semesterGpa
         
+        result.text = String(format: "GPA: %.2f /4 ", semesterGpa)
+      
          
-         if gpa > 2.8{
-             let selectedButton = sound[sender.tag]
-             let soundURL = Bundle.main.url(forResource: selectedButton, withExtension: "wav")
+
+
+         if semesterGpa > 2.8{
+
+             let soundURL = Bundle.main.url(forResource: "Win", withExtension: "wav")
              audioplayer = try! AVAudioPlayer(contentsOf: soundURL!)
              audioplayer.play()
          }
-        
+        print("\(Student.studentData)")
         
         
         

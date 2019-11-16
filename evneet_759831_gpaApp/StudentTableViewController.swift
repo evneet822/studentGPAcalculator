@@ -14,7 +14,7 @@ class StudentTableViewController: UITableViewController,UISearchResultsUpdating 
     @IBOutlet var searchBar: UISearchBar!
     var filterData = [Student]()
     let searchController = UISearchController(searchResultsController: nil)
-    
+    var studentIndx = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class StudentTableViewController: UITableViewController,UISearchResultsUpdating 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
        
-        searchController.searchResultsUpdater = self
+               searchController.searchResultsUpdater = self
                searchController.dimsBackgroundDuringPresentation = false
                definesPresentationContext = true
                tableView.tableHeaderView = searchController.searchBar
@@ -60,7 +60,7 @@ class StudentTableViewController: UITableViewController,UISearchResultsUpdating 
             studnt = Student.studentData[indexPath.row]
         }
         cell.textLabel?.text = "\(studnt.firstName + " " + "\(studnt.lastName)")"
-        
+        cell.detailTextLabel?.text = "\(Student.studentData[indexPath.row].cgpa)"
 
            return cell
         
@@ -75,7 +75,7 @@ class StudentTableViewController: UITableViewController,UISearchResultsUpdating 
         filterStudent(for: searchController.searchBar.text ?? "")
     }
     
-    
+   
     
     
 
@@ -125,6 +125,13 @@ class StudentTableViewController: UITableViewController,UISearchResultsUpdating 
         if let studentDetail = segue.destination as? ViewController{
             studentDetail.studentdelegate = self
         }
+        if let detail = segue.destination as? semesterTableViewController{
+            detail.studentdelegate = self
+        }
+        if let cell = sender as? UITableViewCell{
+            studentIndx = tableView.indexPath(for: cell)!.row
+        }
+        
     }
     
     private func filterStudent(for searchText: String){

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B3C3345237F6DA8003BEB9A /* Win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C3344237F6DA8003BEB9A /* Win.wav */; };
 		9B3C952D237F27E200452B5B /* GPAcalculaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C952C237F27E200452B5B /* GPAcalculaterViewController.swift */; };
 		9B3C9531237F56A200452B5B /* courselist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C9530237F56A200452B5B /* courselist.swift */; };
 		9B3C9533237F57E000452B5B /* semesterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C9532237F57E000452B5B /* semesterTableViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B3C3344237F6DA8003BEB9A /* Win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Win.wav; sourceTree = "<group>"; };
 		9B3C952C237F27E200452B5B /* GPAcalculaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPAcalculaterViewController.swift; sourceTree = "<group>"; };
 		9B3C9530237F56A200452B5B /* courselist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courselist.swift; sourceTree = "<group>"; };
 		9B3C9532237F57E000452B5B /* semesterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = semesterTableViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		9B641A03237DDC02000FFEE1 /* evneet_759831_gpaApp */ = {
 			isa = PBXGroup;
 			children = (
+				9B3C3344237F6DA8003BEB9A /* Win.wav */,
 				9B641A04237DDC02000FFEE1 /* AppDelegate.swift */,
 				9B641A06237DDC02000FFEE1 /* SceneDelegate.swift */,
 				9B641A08237DDC02000FFEE1 /* ViewController.swift */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B641A11237DDC04000FFEE1 /* LaunchScreen.storyboard in Resources */,
+				9B3C3345237F6DA8003BEB9A /* Win.wav in Resources */,
 				9B641A0E237DDC04000FFEE1 /* Assets.xcassets in Resources */,
 				9B641A0C237DDC02000FFEE1 /* Main.storyboard in Resources */,
 			);

@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             let s = Student(firstName: firstName!, lastName: lastName!, sId: studentId!)
             
             Student.studentData.append(s)
-            print("\(Student.studentData)")
+           
             
             let alert = UIAlertController(title: "New contact saved", message: "\(firstName!) is now a student", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .cancel) { (action) in
