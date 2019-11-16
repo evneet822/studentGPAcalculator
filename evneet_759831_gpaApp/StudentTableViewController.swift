@@ -61,7 +61,7 @@ class StudentTableViewController: UITableViewController,UISearchResultsUpdating 
             studnt = Student.studentData[indexPath.row]
         }
         cell.textLabel?.text = "\(studnt.firstName + " " + "\(studnt.lastName)")"
-        cell.detailTextLabel?.text = String(format: "%.2f", (studnt.cgpa))
+        cell.detailTextLabel?.text = String(format: "%.2f", studnt.cgpa)
            return cell
         
     }

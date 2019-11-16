@@ -19,8 +19,8 @@ class GPAcalculaterViewController: UIViewController {
     var audioplayer: AVAudioPlayer!
     var c1: Double?
     var marks: Double?
-    var gpa = 0.0
-    var isFirst = true
+   
+    
     
     var semesterDelegate: semesterTableViewController?
     
@@ -35,12 +35,11 @@ class GPAcalculaterViewController: UIViewController {
         }
         
         // Do any additional setup after loading the view.
-        
+        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        self.view.addGestureRecognizer(tapgesture)
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        isFirst = false
-    }
+    
     
 
     /*
@@ -56,13 +55,15 @@ class GPAcalculaterViewController: UIViewController {
     
     @IBAction func calculate(_ sender: UIButton) {
         
+         var gpa = 0.0
+        
         for i in textfeild.indices{
             
             if textfeild[i].text == ""{
                 let alert = UIAlertController(title: "Empty Feilds", message: "Please enter marks", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                break
+                
             }
             
             
@@ -73,7 +74,7 @@ class GPAcalculaterViewController: UIViewController {
                     let alert = UIAlertController(title: "Out of range!", message: "Enter marks between 0 to 100", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-                    break
+                   
                 }
                 
                 
@@ -81,28 +82,21 @@ class GPAcalculaterViewController: UIViewController {
                            Student.studentData[semesterDelegate!.stdSemIndx].marks[semesterDelegate!.semesterIndx][i] = String(Int(textfeild[i].text!)!)
                            let credit = courceLabel[i].text!
                            gpa += (marks! * Double(String(credit[credit.index(before: credit.endIndex)]))!)
-                
-                let semesterGpa = gpa / 20.0
-                  Student.studentData[semesterDelegate!.stdSemIndx].gpa[semesterDelegate!.semesterIndx] = semesterGpa
-                  result.text = String(format: "GPA: %.2f /4 ", semesterGpa)
-                
-                   if semesterGpa > 2.8{
-
-                       let soundURL = Bundle.main.url(forResource: "Win", withExtension: "wav")
-                       audioplayer = try! AVAudioPlayer(contentsOf: soundURL!)
-                       audioplayer.play()
-                   }
-                
-                       }
-                       
-                       
-                       
-                       
-                
             }
+                       
+        }
             
            
-       
+       let semesterGpa = gpa / 20.0
+                        Student.studentData[semesterDelegate!.stdSemIndx].gpa[semesterDelegate!.semesterIndx] = semesterGpa
+                        result.text = String(format: "GPA: %.2f /4 ", semesterGpa)
+                      
+                         if semesterGpa > 2.8{
+
+                             let soundURL = Bundle.main.url(forResource: "Win", withExtension: "wav")
+                             audioplayer = try! AVAudioPlayer(contentsOf: soundURL!)
+                             audioplayer.play()
+                         }
         
         
         
@@ -138,6 +132,19 @@ class GPAcalculaterViewController: UIViewController {
         }
         
         return c1!
+    }
+    
+    
+    @IBAction func feilds(_ sender: UITextField) {
+        
+        sender.resignFirstResponder()
+    }
+    
+    @objc func viewTapped(){
+        
+        for i in textfeild.indices{
+            textfeild[i].resignFirstResponder()
+        }
     }
     
 }

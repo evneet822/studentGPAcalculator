@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     
@@ -85,5 +87,16 @@ class ViewController: UIViewController {
     }
     
 
+    
+    @IBAction func textfeild(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @objc func viewTapped(){
+        firstname.resignFirstResponder()
+        lastname.resignFirstResponder()
+        stId.resignFirstResponder()
+        
+    }
 }
 
