@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     @IBAction func save(_ sender: UIButton) {
         
-        let alertcontroller = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .alert)
+        let alertcontroller = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .actionSheet)
         
         let cancel = UIAlertAction(title: "No Way", style: .cancel, handler: nil)
         let ok = UIAlertAction(title: "Yes, I'm sure!", style: .default) { (action) in
@@ -36,8 +36,30 @@ class ViewController: UIViewController {
             
             let s = Student(firstName: firstName!, lastName: lastName!, sId: studentId!)
             
+            if self.firstname.text == "" || self.lastname.text == "" || self.stId.text == ""{
+                
+                let alert = UIAlertController(title: "Empty Feilds !!", message: nil, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            var isExist = false
+            let id = s.sId
+            for item in Student.studentData{
+                if id == item.sId{
+                    isExist = true
+                    break
+                }
+            }
+            
+            if isExist{
+                let alert = UIAlertController(title: "StudentID Taken", message: "Enter different ID", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }else{
+            
             Student.studentData.append(s)
-           
+            }
             
             let alert = UIAlertController(title: "New contact saved", message: "\(firstName!) is now a student", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .cancel) { (action) in

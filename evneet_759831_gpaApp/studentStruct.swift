@@ -11,7 +11,7 @@ struct Student {
     var firstName: String
     var lastName: String
     var sId: String
-    var marks = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
+    var marks = [["","","","",""],["","","","",""],["","","","",""]]
     var gpa = [0.0,0.0,0.0]
     var cgpa: Double{
         

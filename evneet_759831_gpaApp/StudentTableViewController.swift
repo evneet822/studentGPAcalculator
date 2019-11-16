@@ -24,11 +24,12 @@ class StudentTableViewController: UITableViewController,UISearchResultsUpdating 
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-       
+        
                searchController.searchResultsUpdater = self
                searchController.dimsBackgroundDuringPresentation = false
                definesPresentationContext = true
                tableView.tableHeaderView = searchController.searchBar
+        searchBar.backgroundColor = UIColor.white
     }
 
     // MARK: - Table view data source
@@ -60,8 +61,7 @@ class StudentTableViewController: UITableViewController,UISearchResultsUpdating 
             studnt = Student.studentData[indexPath.row]
         }
         cell.textLabel?.text = "\(studnt.firstName + " " + "\(studnt.lastName)")"
-        cell.detailTextLabel?.text = "\(Student.studentData[indexPath.row].cgpa)"
-
+        cell.detailTextLabel?.text = String(format: "%.2f", (studnt.cgpa))
            return cell
         
     }
